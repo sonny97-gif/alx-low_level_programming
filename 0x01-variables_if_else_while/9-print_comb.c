@@ -1,21 +1,30 @@
-#include<stdio.h>
+/*
+ * File: 9-print_comb.c
+ * Auth: Brennan D Baraban
+ */
+
+#include <stdio.h>
+
 /**
- * main - prin 0-9 separated with commas, using putchar
- * Return: 0 always on success
+ * main - Prints all possible combinations of single-digit numbers.
+ *
+ * Return: Always 0.
  */
 int main(void)
 {
-	int n = '0';
-	while (n <= '9')
+	int num;
+
+	for (num = 0; num <= 9; num++)
 	{
-		putchar(n);
-		if (n != '9')
-		{
-			putchar(',');
-			putchar(' ');
-		}
-		n++;
+		putchar((num % 10) + '0');
+		if (num == 9)
+			continue;
+		
+		putchar(',');
+		putchar(' ');
 	}
+
 	putchar('\n');
+
 	return (0);
 }
