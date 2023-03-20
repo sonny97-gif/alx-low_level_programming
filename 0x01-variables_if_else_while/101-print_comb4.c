@@ -1,26 +1,26 @@
-#include<stdio.h>
+#include <stdio.h>
 
 /**
- * main - print all combination of three different digits
- * Return: 0 always on success
+ * main - a simple program that outputs 0-9 separated by commas
+ *
+ * Return: 0 on success
  */
-
 int main(void)
 {
-	int one;
-	int ten;
-	int hundred;
+	int i;
+	int j;
+	int k;
 
-	for (hundred = '0'; hundred <= '9'; hundred++)/*hundred place*/
+	for (i = 48; i < 56; i++)
 	{
-		for (ten = (hundred + 1); ten <= '9'; ten++)/*tens=100s+1*/
+		for (j = i + 1; j < 57; j++)
 		{
-			for (one = (ten + 1); one <= '9'; one++)/*ones*/
+			for (k = j + 1; k < 58; k++)
 			{
-				putchar(hundred);
-				putchar(ten);
-				putchar(one);
-				if (hundred != '7' || ten != '8' || one != '9')
+				putchar(i);
+				putchar(j);
+				putchar(k);
+				if (i != 55 || j != 56 || k != 57)
 				{
 					putchar(',');
 					putchar(' ');
@@ -29,7 +29,5 @@ int main(void)
 		}
 	}
 	putchar('\n');
-
 	return (0);
 }
-0 comments on commit f2917d8
