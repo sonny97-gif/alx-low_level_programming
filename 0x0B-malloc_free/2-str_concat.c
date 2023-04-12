@@ -3,21 +3,35 @@
 #include <stdlib.h>
 
 /**
- * main - check the code for ALX School students.
- *
- * Return: Always 0.
+ * str_concat - concatenate strings
+ * @s1: string 1
+ * @s2: string 2
+ * Return: NULL if failure
  */
-int main(void)
+char *str_concat(char *s1, char *s2)
 {
-    char *s;
+	char *s;
+	int a, b, c, d;
 
-    s = str_concat("Betty ", "Holberton");
-    if (s == NULL)
-    {
-        printf("failed\n");
-        return (1);
-    }
-    printf("%s\n", s);
-    free(s);
-    return (0);
+	if (s1 == 0)
+		s1 = "";
+	if (s2 == 0)
+		s2 = "";
+	for (a = 0; s1[a] != '\0'; a++)
+		;
+	for (b = 0; s2[b] != '\0'; b++)
+		;
+	b++;
+	s = malloc(a * sizeof(*s1) + b * sizeof(*s2));
+	if (s == 0)
+		return (NULL);
+	for (c = 0, d = 0; c < a + b; c++)
+	{
+		if (c < a)
+			s[c] = s1[c];
+		else
+			s[c] = s2[d++];
+	}
+	return (s);
 }
+
